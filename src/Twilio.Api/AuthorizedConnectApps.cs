@@ -15,7 +15,7 @@ namespace Twilio
 		{
 			var request = new RestRequest();
 			request.Resource = "Accounts/{AccountSid}/AuthorizedConnectApps/{AuthorizedConnectAppSid}.json";
-			
+
 			request.AddUrlSegment("AuthorizedConnectAppSid", authorizedConnectAppSid);
 
 			return Execute<AuthorizedConnectApp>(request);
