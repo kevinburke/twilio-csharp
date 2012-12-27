@@ -124,7 +124,6 @@ namespace Twilio
 			var request = new RestRequest(Method.POST);
 			request.Resource = "Accounts/{AccountSid}/Applications/{ApplicationSid}.json";
 			request.AddUrlSegment("ApplicationSid", applicationSid);
-			
 			if (options != null)
 			{
 				if (options.FriendlyName != null) request.AddParameter("FriendlyName", options.FriendlyName);

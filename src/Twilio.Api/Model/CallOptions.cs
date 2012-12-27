@@ -59,5 +59,10 @@ namespace Twilio
 		/// Set this parameter to 'true' to record the entirety of a phone call. The RecordingUrl will be sent to the StatusCallback URL. Defaults to 'false'.
 		/// </summary>
 		public bool Record { get; set; }
+
+		/// <summary>
+		/// The Status to update the call to - put 'completed' to hangup a call
+		/// </summary>
+		public string Status { get; set; }
 	}
 }
