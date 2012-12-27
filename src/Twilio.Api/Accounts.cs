@@ -37,8 +37,25 @@ namespace Twilio
 		/// </summary>
 		public AccountResult ListSubAccounts()
 		{
+			return ListSubAccounts(null, null, null, null);
+		}
+
+		/// <summary>
+		/// List all subaccounts created for the authenticated account. Makes a GET request to the Account List resource.
+		/// </summary>
+		/// <param name="friendlyName">Optional friendly name to match</param>
+		/// <param name="status">The account status to filter by</param>
+		/// <param name="pageNumber">Page number to start retrieving results from</param>
+		/// <param name="count">How many results to return</param>
+		public AccountResult ListSubAccounts(string friendlyName, string status, int? pageNumber, int? count)
+		{
 			var request = new RestRequest();
 			request.Resource = "Accounts.json";
+
+			if (friendlyName.HasValue()) request.AddParameter("FriendlyName", friendlyName);
+			if (status.HasValue()) request.AddParameter("Status", status);
+			if (pageNumber.HasValue) request.AddParameter("Page", pageNumber.Value);
+			if (count.HasValue) request.AddParameter("PageSize", count.Value);
 
 			return Execute<AccountResult>(request);
 		}
