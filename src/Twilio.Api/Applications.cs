@@ -57,7 +57,7 @@ namespace Twilio
 			request.Resource = "Accounts/{AccountSid}/Applications.json";
 
 			Require.Argument("FriendlyName", options.FriendlyName);
-			Validate.IsValidLength(friendlyName, 64);
+			Validate.IsValidLength(options.FriendlyName, 64);
 
 			// some check for null. in those cases an empty string is a valid value (to remove a URL assignment)
 			if (options != null)
