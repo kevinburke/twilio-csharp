@@ -86,7 +86,7 @@ namespace Twilio
 		/// Execute a manual REST request
 		/// </summary>
 		/// <param name="request">The RestRequest to execute (will use client credentials)</param>
-		public IRestResponse Execute(IRestRequest request)
+		public virtual IRestResponse Execute(IRestRequest request)
 		{
 			return _client.Execute(request);
 		}
